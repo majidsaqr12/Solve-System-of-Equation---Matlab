@@ -1,0 +1,16 @@
+A = input ('Enter your coeffcient matrix:');
+B = input ('Enter sourse vector: ');
+N = length(B);
+X = zeros(N,1);
+Aug = [A B];
+
+for j = 1:N %Col
+    Aug(j,:) = Aug(j,:) / Aug(j,j);
+    for i = 1:N %row
+        if i~=j
+            m = Aug(i,j);
+            Aug(i,:) = Aug(i,:) - m*Aug(j,:);
+
+        end
+    end
+end

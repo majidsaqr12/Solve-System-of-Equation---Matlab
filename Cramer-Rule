@@ -1,0 +1,18 @@
+A = input ('Enter your coeffcient matrix:');
+B = input ('Enter sourse vector: ');
+N = length(B);
+X = zeros(N,1);
+d = det(A);
+Aold = A;
+if d~=0
+    for i = 1:N
+        A(:,i)=B;
+        X(i) = det(A)/d;
+        A = Aold;
+    end
+    disp('Solution With Crammer rule ')
+    X;
+
+else
+    dis('no Applicable')
+end
